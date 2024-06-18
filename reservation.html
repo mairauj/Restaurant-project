@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservation</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./image/favicon_io/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reservation.css" />
+    <link rel="stylesheet" href="animation.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+  <body id="bs-or">
+    <div id="nav-container">
+      <div id="logo"></div>
+      <ul id="nav-list" class="font-montserrat">
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="./menu.html">MENU</a></li>
+        <li>
+          <a href="./reservation.html" class="current-page">RESERVATION</a>
+        </li>
+        <li><a href="./gallery.html">GALLERY</a></li>
+        <li><a href="./about.html">ABOUT</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+
+    <div id="reservation" class="page-heading">
+      <h1 class="main-heading font-montserrat text-shadow animated-heading">
+        Reservation
+      </h1>
+    </div>
+
+    <div id="reservation-form-container" class="animated-heading">
+      <h1 class="sub-heading font-pacifico">Book Your table now!</h1>
+      <form action="javascript:void(0);" method="get" autocomplete="off">
+        <div class="form-row">
+          <div class="form-element">
+            <label for="date">Date</label><br />
+            <input type="date" id="date" name="date" required />
+          </div>
+          <div class="form-element">
+            <label for="time">Time</label><br />
+            <select name="time" id="time" required>
+              <option value="9:00 AM">9:00</option>
+              <option value="9:30 AM">9:30</option>
+              <option value="9:30 AM">10:00</option>
+              <option value="10:30 AM">10:30</option>
+              <option value="11:00 AM">11:00</option>
+              <option value="11:30 AM">11:30</option>
+              <option value="12:00 PM">12:00</option>
+              <option value="12:30 PM">12:30</option>
+              <option value="13:00 PM">13:00</option>
+              <option value="1:30 PM">13:30</option>
+              <option value="2:00 PM">14:00</option>
+              <option value="2:30 PM">14:30</option>
+              <option value="3:00 PM">15:00</option>
+              <option value="3:30 PM">15:30</option>
+              <option value="4:00 PM">16:00</option>
+              <option value="4:30 PM">16:30</option>
+              <option value="5:00 PM">17:00</option>
+              <option value="5:30 PM">17:30</option>
+              <option value="6:00 PM">18:00</option>
+            </select>
+          </div>
+          <div class="form-element">
+            <label for="people">People</label><br />
+            <select name="people" id="people" required>
+              <option value="1">1 person</option>
+              <option value="2">2 people</option>
+              <option value="3">3 people</option>
+              <option value="4">4 people</option>
+              <option value="5">5 people</option>
+              <option value="6">6 people</option>
+              <option value="7">7 people</option>
+              <option value="8">8 people</option>
+              <option value="9">9 people</option>
+              <option value="10">10 people</option>
+              <option value="11">11 people</option>
+              <option value="12">12 people</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-element">
+            <label for="name">Name</label><br />
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div class="form-element">
+            <label for="phone">Number</label><br />
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              pattern="[0-9]{10}"
+              required
+            />
+          </div>
+          <div class="form-element">
+            <label for="email">Email</label><br />
+            <input type="email" name="email" id="email" required />
+          </div>
+        </div>
+        <button id="submit">BOOK</button>
+      </form>
+      <div id="message-container" class="box-shadow">
+        <h1 class="font-montserrat"></h1>
+        <button>
+          <a href="./reservation.html" id="book-again">BOOK AGAIN</a>
+        </button>
+      </div>
+    </div>
+
+    <div class="booking-container size-up s-up">
+      <div>
+        <h2>RESERVE BY PHONE</h2>
+        <p>To reserve through phone, kindly call on this number: 2651234</p>
+      </div>
+      <div>
+        <h2>EVENT BOOKING</h2>
+        <p>Call on 2651234 to check availability and prices</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>Made By Aayush Bakre</p>
+    </footer>
+
+    <script src="./nav.js"></script>
+    <script>
+      $(document).ready(function () {
+        let today = new Date();
+
+        let year = today.getFullYear();
+        let month = today.getMonth() + 1;
+        let date = today.getDate();
+        if(date < 10) {
+          date = `0${date}`;
+        }
+        if(month < 10) {
+          month = `0${month}`;
+        }
+        let dateStr = `${year}-${month}-${date}`;
+        $("#date").attr("min", dateStr);
+
+
+        $("#submit").click(function () {
+          let date = $("#date").val();
+          let time = $("#time").val();
+          let people =
+            $("#people").val() > 1
+              ? `${$("#people").val()} people`
+              : `${$("#people").val()} person`;
+          let name = $("#name").val();
+          let phone = $("#phone").val();
+          let email = $("#email").val();
+          if (name && people && date && time && phone && email) {
+            let message = `${name}, Your reservation on date ${date} for ${people} is confirmed. Have a great time!`;
+            $("#message-container h1").text(message);
+            $("#reservation-form-container form").addClass("hide-form");
+            $("#reservation-form-container .sub-heading").addClass("hide-form");
+            $("#message-container").addClass("show-message");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

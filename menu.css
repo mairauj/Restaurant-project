@@ -1,0 +1,185 @@
+#menu {
+    background-image: url(./image/menu/menu-bg.jpg);
+}
+
+.menu-heading {
+    text-align: center;
+    padding: 60px;
+}
+
+.menu-img {
+    width: 30vw;
+    aspect-ratio: 4/3;
+    background-size: cover;
+    border-radius: 12px;
+    background-position: 50%;
+    position: relative;
+    z-index: 1;
+}
+
+.menu-tab {
+    display: flex;
+    gap: 100px;
+}
+
+.menu-item p {
+    color: grey;
+    font-size: 12px;
+}
+
+.menu-item h2, .menu-item p {
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    z-index: -1;
+}
+
+.menu-item p {
+    margin-top: 0;
+}
+
+.menu-item h2 {
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.menu-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 0;
+}
+
+.right {
+    text-align: right;
+}
+
+.menu-item {
+    animation: size-up 0.5s ease 1;
+}
+
+#events {
+    text-align: right;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: -1;
+}
+
+.menu-scroll {
+    height: 20vh;
+    width: 20px;
+    background-color: red;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+@keyframes fade-left {
+    0% {
+        transform: translateX(500px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes size-up {
+    0% {
+        transform: scale(80%);
+    }
+
+    100% {
+        transform: scale(100%);
+    }
+}
+
+
+#menu-starters .menu-img {
+    animation: fade-left 0.5s ease 1;
+}
+
+#menu-starters .menu-item-container {
+    animation: size-up 0.5s ease 1;
+}
+
+#heading-starter {
+    animation: size-up 0.5s ease 1;
+}
+
+@media (max-width:1000px) {
+
+    .main-heading {
+        text-align: center;
+    }
+
+    .menu-container {
+        margin: 0;
+    }
+
+    .menu-container:last-child {
+        margin-bottom: 50px;
+    }
+
+    .menu-item-container {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        width: 60vw;
+        padding: 40px;
+        border-radius: 12px;
+        color: white;
+    }
+
+    .menu-item-container::before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 12px;
+    }
+
+    .menu-item h2, .menu-item p {
+        color: white;
+        text-shadow: black 0 0 10px;
+    }
+
+    .menu-img {
+        display: none;
+        position: absolute;
+        z-index: -1;
+        width: max-content;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #menu-starters .menu-item-container {
+        background-image: url(./image/menu/starter.jpg);
+    }
+
+    #menu-main .menu-item-container {
+        background-image: url(./image/menu/main.jpg);
+        background-position: center;
+    }
+
+    #menu-drinks .menu-item-container {
+        background-image: url(./image/menu/drinks.jpg);
+    }
+
+    #menu-dessert .menu-item-container {
+        background-image: url(./image/menu/dessert.jpg);
+        background-size: 150%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}

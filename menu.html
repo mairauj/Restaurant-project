@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./image/favicon_io/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="animation.css">
+</head>
+
+<body id="bs-or">
+    <div id="nav-container">
+        <div id="logo"></div>
+        <ul id="nav-list" class="font-montserrat">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="./menu.html"  class="current-page">MENU</a></li>
+            <li><a href="./reservation.html">RESERVATION</a></li>
+            <li><a href="./gallery.html">GALLERY</a></li>
+            <li><a href="./about.html">ABOUT</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+
+    <div id="menu" class="page-heading">
+        <h1 class="main-heading font-montserrat text-shadow animated-heading">The Menu</h1>
+    </div>
+
+    <h2 class="sub-heading font-pacifico menu-heading" id="heading-starters">Starters</h2>
+
+    <div class="menu-container">
+        <div id="menu-starters" class="menu-tab">
+            <div class="menu-img box-shadow" style="background-image: url(./image/menu/starter.jpg);"></div>
+            <div class="menu-item-container">
+            </div>
+        </div>
+    </div>
+
+    <h2 class="sub-heading font-pacifico menu-heading reveal size-up" id="heading-main">Main</h2>
+
+    <div class="menu-container">
+        <div id="menu-main" class="menu-tab">
+            <div class="menu-item-container reveal size-up right">
+            </div>
+            <div class="menu-img box-shadow reveal fade-right" style="background-image: url(./image/menu/main.jpg);"></div>
+        </div>
+    </div>
+
+    <h2 class="sub-heading font-pacifico menu-heading reveal size-up" id="heading-drinks">Drinks</h2>
+
+    <div class="menu-container">
+        <div id="menu-drinks" class="menu-tab">
+            <div class="menu-img box-shadow reveal fade-left" style="background-image: url(./image/menu/drinks.jpg);"></div>
+            <div class="menu-item-container">
+            </div>
+        </div>
+    </div>
+
+    <h2 class="sub-heading font-pacifico menu-heading reveal size-up" id="heading-dessert">Dessert</h2>
+
+    <div class="menu-container">
+        <div id="menu-dessert" class="menu-tab">
+            <div class="menu-item-container reveal size-up right">
+            </div>
+            <div class="menu-img box-shadow reveal fade-right" style="background-image: url(./image/menu/dessert.jpg);"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made By Aayush Bakre</p>
+    </footer>
+
+    <script src="./nav.js"></script>
+    <script src="./menu.js"></script>
+</body>
+
+</html>
